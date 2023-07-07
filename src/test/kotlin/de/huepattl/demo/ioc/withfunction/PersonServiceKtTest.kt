@@ -15,7 +15,17 @@ class PersonServiceKtTest {
 
     @Test
     fun `test using stub`() {
-        val person = getById("jane", {id: String -> Result.success(Person(id = "foo", name = "Test", dateOfBirth = LocalDate.now()))})
+        val person = getById(
+            "jane"
+        ) { id: String ->
+            Result.success(
+                Person(
+                    id = "foo",
+                    name = "Test",
+                    dateOfBirth = LocalDate.now()
+                )
+            )
+        }
 
         assert(person.getOrNull()!!.name.equals("Test"))
     }
