@@ -1,5 +1,6 @@
-package de.huepattl.demo.ioc.withintf
+package de.huepattl.demo.ioc
 
+import de.huepattl.demo.ioc.withmock.PersonService
 import jakarta.enterprise.context.RequestScoped
 import jakarta.ws.rs.GET
 import jakarta.ws.rs.Path

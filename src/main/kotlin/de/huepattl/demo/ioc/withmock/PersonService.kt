@@ -1,4 +1,4 @@
-package de.huepattl.demo.ioc.withintf
+package de.huepattl.demo.ioc.withmock
 
 import de.huepattl.demo.ioc.Person
 import jakarta.enterprise.context.ApplicationScoped

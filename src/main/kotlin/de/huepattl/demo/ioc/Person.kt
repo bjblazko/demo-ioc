@@ -1,4 +1,4 @@
-package de.huepattl.demo.ioc.common
+package de.huepattl.demo.ioc
 
 import java.time.LocalDate
 import java.util.UUID

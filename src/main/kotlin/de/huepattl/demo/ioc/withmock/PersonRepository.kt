@@ -1,4 +1,4 @@
-package de.huepattl.demo.ioc.withintf
+package de.huepattl.demo.ioc.withmock
 
 import de.huepattl.demo.ioc.Person
 import jakarta.enterprise.context.ApplicationScoped
@@ -8,8 +8,8 @@ import java.time.Month
 
 @ApplicationScoped
 @Default
-class PersonRepositoryAppImpl : PersonRepository {
-    override fun getById(id: String): Result<Person> {
+class PersonRepository {
+    fun getById(id: String): Result<Person> {
         println("using prod repo")
         return when(id) {
             "jane" -> Result.success(Person(id = id, name = "Jane Doe", dateOfBirth = LocalDate.of(1977, Month.MAY, 31)))

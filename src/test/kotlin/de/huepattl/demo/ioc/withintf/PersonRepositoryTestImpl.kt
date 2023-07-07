@@ -1,6 +1,6 @@
 package de.huepattl.demo.ioc.withintf
 
-import de.huepattl.demo.ioc.common.Person
+import de.huepattl.demo.ioc.Person
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.enterprise.inject.Alternative
 import jakarta.enterprise.inject.Produces

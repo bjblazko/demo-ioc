@@ -1,6 +1,6 @@
 package de.huepattl.demo.ioc.withintf
 
-import de.huepattl.demo.ioc.common.Person
+import de.huepattl.demo.ioc.Person
 
 interface PersonRepository {
 
