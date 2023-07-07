@@ -1,7 +1,6 @@
-package de.huepattl.demo.ioc.with.intrface
+package de.huepattl.demo.ioc.withintf
 
 import de.huepattl.demo.ioc.common.Person
-import jakarta.annotation.Priority
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.enterprise.inject.Default
 import java.time.LocalDate
