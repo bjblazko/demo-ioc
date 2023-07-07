@@ -1,4 +1,4 @@
-package de.huepattl.demo.ioc
+package de.huepattl.demo.ioc.withintf
 
 import de.huepattl.demo.ioc.withmock.PersonService
 import jakarta.enterprise.context.RequestScoped
@@ -10,14 +10,14 @@ import jakarta.ws.rs.core.MediaType
 import jakarta.ws.rs.core.Response
 
 @RequestScoped
-@Path("/person")
+@Path("/person/interface")
 @Produces(MediaType.APPLICATION_JSON)
 class PersonResource(val personService: PersonService) {
 
     @GET
     @Path("{id}")
     fun person(@PathParam("id") id: String): Response {
-        val result = personService.getById(id)
+        val result = personService.getByIdAndCalculateAge(id)
 
         return if (result.isFailure) {
             Response.status(500, "Failed to return person: ${result.exceptionOrNull()}").build()
@@ -28,7 +28,8 @@ class PersonResource(val personService: PersonService) {
                 {
                     "id": "${person.id}",
                     "name": "${person.name}",
-                    "dateOfBirth": "${person.dateOfBirth}"
+                    "dateOfBirth": "${person.dateOfBirth}",
+                    "age": ${person.age}
                 }
             """.trimIndent()
             ).build()

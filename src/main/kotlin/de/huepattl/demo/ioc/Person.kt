@@ -6,5 +6,6 @@ import java.util.UUID
 data class Person(
     val id: String = UUID.randomUUID().toString(),
     val name: String,
-    val dateOfBirth: LocalDate
+    val dateOfBirth: LocalDate,
+    val age: Int = -1
 )

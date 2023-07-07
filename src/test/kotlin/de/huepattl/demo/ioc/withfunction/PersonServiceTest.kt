@@ -4,18 +4,23 @@ import de.huepattl.demo.ioc.Person
 import org.junit.jupiter.api.Test
 import java.time.LocalDate
 
-class PersonServiceKtTest {
+/**
+ * Here, we do not use CDI at all but provide the according service function with another
+ * function as parameter on how to retrieve the person. Thus, we can simply replace the standard function
+ * with a local one to this test.
+ */
+class PersonServiceTest {
 
     @Test
-    fun `test using prod repo`() {
-        val person = getById("jane", ::getById)
+    fun `test using prod repo function`() {
+        val person = getByIdAndCalculateAge("jane", ::getById)
 
         assert(person.getOrNull()!!.name.equals("Jane Doe"))
     }
 
     @Test
-    fun `test using stub`() {
-        val person = getById(
+    fun `test using local function stub`() {
+        val person = getByIdAndCalculateAge(
             "jane"
         ) { id: String ->
             Result.success(

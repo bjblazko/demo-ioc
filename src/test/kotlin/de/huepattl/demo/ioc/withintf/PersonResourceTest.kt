@@ -5,6 +5,11 @@ import io.restassured.RestAssured.given
 import org.hamcrest.CoreMatchers.containsString
 import org.junit.jupiter.api.Test
 
+/**
+ * Direct test for [PersonResource] using its default dependency.
+ * This demonstrates testing against a 'real' application bootstrapped by [QuarkusTest].
+ * The test emits HTTP calls using REST Assured.
+ */
 @QuarkusTest
 class PersonResourceTest {
 

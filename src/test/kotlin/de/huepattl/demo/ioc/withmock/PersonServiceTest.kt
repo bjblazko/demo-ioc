@@ -22,7 +22,7 @@ class PersonServiceTest {
     @Test
     fun `use service but get data from test repository`() {
         val personService = getPersonServiceWithMockedRepository()
-        val personResult = personService.getById("john")
+        val personResult = personService.getByIdAndCalculateAge("john")
 
         assert(personResult.isSuccess)
         // FIXME: why do we have a double result-result here?
