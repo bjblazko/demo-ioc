@@ -1,1 +1,1 @@
-# Demo: Dependency Injection (DI) / Inverion Of Control (IOC) 
+# Demo: Dependency Injection (DI) / Inversion Of Control (IOC) 
